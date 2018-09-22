@@ -10,7 +10,7 @@
                     <ul class="img-default">
                         <div class="car-banner" @click="clickAll(item.Id)">
                             <p>{{item.Name}}</p>
-                            <p>{{item.Count}}></p>
+                            <p>{{item.Count}}张></p>
                         </div>
                         <li v-for="(list,key) in item.List" :key="key">
                             <img :src="list.Url" alt="">

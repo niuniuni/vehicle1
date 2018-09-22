@@ -2,15 +2,11 @@
     <div class="color-nav">
         <h5>全部颜色</h5>
         <div class="color-type">
-            <p v-for="(item,index) in ColorList" :key="index" @click="year(item)">
-                <span>
+            <p class="c-type">
+                <span v-for="(item,index) in ColorList" :key="index" @click="year(item)">
                    {{index}} 
                 </span>  
             </p>
-        
-        </div>
-        <div>
-            <!-- <div v-for="(item,key) in colorDetailList">{{item}}</div> -->
         </div>
     </div>
 </template>
@@ -54,17 +50,17 @@ export default {
         width:100%;
         font-weight: normal;   
     }
-    .color-type{
-        background: #fff;
-        width: 100%;
+    .c-type{
+        margin-top: .15rem;
+        padding-left: .2rem;
+        font-size: .3rem;
+        line-height: .76rem;
         height: .76rem;
+        width: 100%;
+        background: #fff;
         overflow-x: scroll;
-        p{
-            float: left; 
-            margin-top: .15rem;
-            padding-left: .2rem;
-            font-size: .3rem;
-            line-height: 1.5;
+        span {
+            padding-right: .42rem;
         }
     }
 }

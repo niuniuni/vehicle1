@@ -9,7 +9,7 @@
                 <p>{{info.market_attribute&&info.market_attribute.dealer_price}}</p> 
                 <p>指导价{{info.market_attribute&&info.market_attribute.official_refer_price}}</p> 
                 <div class="action active flex-row">
-                    <button data-hover="hover" @click="quotation(info.carId)">{{info.BottomEntranceTitle}}</button>
+                    <button data-hover="hover" @click="quotation">{{info.BottomEntranceTitle}}</button>
                 </div>
             </div>
             <div class="car-list">
@@ -26,7 +26,7 @@
                                 <span>{{`指导价${list.market_attribute.dealer_price_min}`}}</span>
                                 <span>{{list.market_attribute.official_refer_price}}</span>
                             </p>
-                            <button>{{info.BottomEntranceTitle}}</button>
+                            <button @click="quotation">{{info.BottomEntranceTitle}}</button>
                         </li>
                     </ul>
                 </div>
@@ -64,8 +64,9 @@ export default {
         onBtn(id){
             this.$router.push({path:'/img',query:{id}})
         },
-        quotation(id){
-            this.$router.push({path:'/quotation',query:{id}})
+        quotation(){
+             _hmt.push(['_trackEvent', '车辆信息，地址', 'tap', '点击按钮']);
+            this.$router.push({path:'/quotation'})
         }
     },
     mounted() {

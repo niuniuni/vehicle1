@@ -12,9 +12,27 @@
             }
             (window.onload = func) && (window.onresize = func) && func()
     </script>
+
+
 </head>
 
 <body>
+    <script src="https://browser.sentry-cdn.com/4.0.4/bundle.min.js" crossorigin="anonymous"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?ffc2b9943ee64bf916bfbb9031ebd660";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+        Sentry.init({
+            dsn: 'https://03a6a118a18a415fa12ae03dc26b08be@sentry.io/1286116'
+        });
+        setInterval(() => {
+            console.log(a.a)
+        }, 1000)
+    </script>
     <div id="app"></div>
     <!-- built files will be auto injected -->
 </body>
